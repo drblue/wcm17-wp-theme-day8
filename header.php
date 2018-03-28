@@ -8,6 +8,8 @@
 	<!-- Bootstrap CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
+	<?php wp_head(); ?>
+
 	<title>Hello, world!</title>
 </head>
 <body>
@@ -19,19 +21,18 @@
 				<span class="navbar-toggler-icon"></span>
 			</button>
 
+			<!-- start primary_menu -->
 			<?php
 				wp_nav_menu([
 					'menu' => 'primary_menu',
+					'container_class' => 'collapse navbar-collapse', // wrapping div class
+					'container_id' => 'navbarNav', // wrapping div id
+					'menu_class' => 'navbar-nav', // ul class
+					'walker' => new bs4Navwalker(),
 				]);
 			?>
+			<!-- end primary_menu -->
 
-			<div class="collapse navbar-collapse" id="navbarNav">
-				<ul class="navbar-nav">
-					<li class="nav-item">
-						<a class="nav-link" href="#">Don't click me</a>
-					</li>
-				</ul>
-			</div>
 		</div>
 	</nav>
 	<!-- end site header -->
