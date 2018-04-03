@@ -22,3 +22,22 @@ function mbt_setup() {
 	add_image_size('post-featured-image', 2560, 500, true);
 }
 add_action('after_setup_theme', 'mbt_setup');
+
+function mbt_widgets() {
+	// register blog sidebar
+	register_sidebar([
+		'name'			=> "Sidofält för bloggen",
+		'id'			=> 'sidebar_blog',
+		'before_widget'	=> '<div id="%1$s" class="widget %2$s">',
+		'after_widget'	=> '</div>',
+	]);
+
+	// register footer sidebar
+	register_sidebar([
+		'name'			=> "Sidfots-widgetar",
+		'id'			=> 'sidebar_footer',
+		'before_widget'	=> '<div id="%1$s" class="widget col-md-3 %2$s">',
+		'after_widget'	=> '</div>',
+	]);
+}
+add_action('widgets_init', 'mbt_widgets');
