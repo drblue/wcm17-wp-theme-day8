@@ -35,3 +35,11 @@ aside .widget:first-of-type {
 footer .widget a {
 	color: #ccc;
 }
+
+body.category {
+	background-color: #faf;
+}
+
+body.single-post {
+	background-color: #aff;
+}

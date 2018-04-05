@@ -47,3 +47,39 @@ function mbt_widgets() {
 	]);
 }
 add_action('widgets_init', 'mbt_widgets');
+
+/* change excerpt length to 20 words */
+function mbt_excerpt_length($length) {
+	return 20;
+}
+add_filter('excerpt_length', 'mbt_excerpt_length', 20);
+
+/* change excerpt length to 80 words */
+function mbt_excerpt_length_long($length) {
+	return 80;
+}
+add_filter('excerpt_length', 'mbt_excerpt_length_long');
+
+/* add read more link to post excerpts */
+function mbt_excerpt_read_more($post) {
+	return '... <br /><a href="' . get_permalink($post->ID) . '" class="btn btn-primary">Read more</a>';
+}
+add_filter('excerpt_more', 'mbt_excerpt_read_more');
+
+/* add bg-dark to body classes if logged in */
+function mbt_body_class($classes) {
+	if (is_user_logged_in()) {
+		$classes[] = 'bg-dark';
+		$classes[] = 'text-white';
+	}
+	return $classes;
+}
+//add_filter('body_class', 'mbt_body_class');
+
+/* filter content */
+function mbt_content($content) {
+	$content = str_replace('!!', '!', $content);
+	$content = str_replace(' !', '!', $content);
+	return $content;
+}
+add_filter('the_content', 'mbt_content');
