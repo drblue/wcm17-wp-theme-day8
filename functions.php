@@ -42,7 +42,7 @@ function mbt_widgets() {
 	register_sidebar([
 		'name'			=> "Sidfots-widgetar",
 		'id'			=> 'sidebar_footer',
-		'before_widget'	=> '<div id="%1$s" class="widget col-md-3 %2$s">',
+		'before_widget'	=> '<div id="%1$s" class="widget col %2$s">',
 		'after_widget'	=> '</div>',
 	]);
 }
