@@ -78,8 +78,47 @@ function mbt_body_class($classes) {
 
 /* filter content */
 function mbt_content($content) {
-	$content = str_replace('!!', '!', $content);
-	$content = str_replace(' !', '!', $content);
-	return $content;
+	$words = ["Lorem", "ipsum", "dolor", "sit", "amet"];
+
+	$replace = [];
+	foreach ($words as $word) {
+		$wordlength = strlen($word); // calculate length of word
+		$replaceword = str_repeat("*", $wordlength); // repeat * for length of word
+		$replace[$word] = $replaceword;
+	}
+	/*
+	// shorter version on one line, a.k.a. one-liner
+	foreach ($words as $word) {
+		$replace[$word] = str_repeat("*", strlen($word)); // repeat * for length of word;
+	}
+	*/
+
+	// above will generate the following array
+	// $replace = [
+	// 	'Lorem' => '*****',
+	// 	'ipsum' => '*****',
+	// 	'dolor' => '*****',
+	// 	'sit' => '***',
+	// 	'amet' => '****',
+	// ];
+	
+	return str_replace(array_keys($replace), array_values($replace), $content);
 }
 add_filter('the_content', 'mbt_content');
+
+function mbt_site_logo() {
+	// get logo media id
+	$custom_logo_id = get_theme_mod( 'custom_logo' );
+
+	// get URL to logo
+	$logo = wp_get_attachment_image_src( $custom_logo_id , 'full' );
+
+	// do we have a custom logo?
+	if (has_custom_logo()) {
+		// if so, echo image-tag to logo
+		echo '<img src="'. esc_url($logo[0]) .'">';
+	} else {
+		// if not, echo site name in text
+		echo get_bloginfo('name');
+	}
+}
