@@ -104,7 +104,7 @@ function mbt_content($content) {
 	
 	return str_replace(array_keys($replace), array_values($replace), $content);
 }
-add_filter('the_content', 'mbt_content');
+// add_filter('the_content', 'mbt_content');
 
 function mbt_site_logo() {
 	// get logo media id
