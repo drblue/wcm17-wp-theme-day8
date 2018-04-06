@@ -22,10 +22,20 @@ function mbt_styles() {
 add_action('wp_enqueue_scripts', 'mbt_styles');
 
 function mbt_setup() {
+	// add support for featured images
 	add_theme_support('post-thumbnails');
 
 	// add some image sizes specific to our theme
 	add_image_size('post-featured-image', 2560, 500, true);
+
+	// add support for custom logo
+	$options = [
+		'height' => 80,
+		'width' => 160,
+		'flex-width' => true,
+		'flex-height' => false,
+	];
+	add_theme_support('custom-logo', $options);
 }
 add_action('after_setup_theme', 'mbt_setup');
 

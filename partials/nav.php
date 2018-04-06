@@ -1,6 +1,8 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
+<nav class="navbar navbar-expand-lg navbar-light mb-4">
 	<div class="container">
-		<a class="navbar-brand" href="<?php bloginfo('url'); ?>"><?php bloginfo('title'); ?></a>
+		<a class="navbar-brand" href="<?php bloginfo('url'); ?>">
+			<?php mbt_site_logo(); ?>
+		</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		</button>
