@@ -35,3 +35,7 @@ aside .widget:first-of-type {
 footer .widget a {
 	color: #ccc;
 }
+
+.clickable {
+	cursor: pointer;
+}
