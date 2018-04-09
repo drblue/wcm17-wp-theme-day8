@@ -133,3 +133,11 @@ function mbt_site_logo() {
 		echo get_bloginfo('name');
 	}
 }
+
+/** exclude posts in category FAQ (6) from main page */
+function exclude_category($query) {
+	if ($query->is_home() && $query->is_main_query()) {
+		$query->set('cat', '-6');
+	}
+}
+add_action('pre_get_posts', 'exclude_category');
