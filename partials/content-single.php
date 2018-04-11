@@ -19,6 +19,9 @@
 			<p>
 				Skriven <?php the_date(); ?> av <?php the_author_posts_link(); ?> i <?php the_category(', '); ?>.
 			</p>
+			<?php
+				get_template_part('partials/content', 'related'); // partials/content-related.php
+			?>
 		</div>
 		<div class="col-md-3">
 			<?php get_sidebar(); ?>

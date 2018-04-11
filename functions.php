@@ -74,7 +74,7 @@ add_filter('excerpt_length', 'mbt_excerpt_length_long');
 
 /* add read more link to post excerpts */
 function mbt_excerpt_read_more($post) {
-	return '... <br /><a href="' . get_permalink($post->ID) . '" class="btn btn-primary">Read more</a>';
+	return '... <br /><br /><a href="' . get_permalink($post->ID) . '" class="btn btn-primary">Read more</a>';
 }
 add_filter('excerpt_more', 'mbt_excerpt_read_more');
 
