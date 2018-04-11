@@ -12,13 +12,7 @@ get_header(); // header.php
 						get_template_part('partials/content', 'excerpt'); // partials/content-excerpt.php
 					?>
 				<?php } ?>
-
-				<div class="d-flex justify-content-between">
-					<div class="nav-previous alignleft"><?php next_posts_link('&laquo; Äldre inlägg'); ?></div>
-	
-					<div class="nav-next alignright"><?php previous_posts_link('Nyare inlägg &raquo;'); ?></div>
-				</div>
-  
+				<?php get_template_part('partials/pagination'); ?>
 			<?php } else { ?>
 				<!-- nu har vi konstaterat att det INTE finns någon post att hämta på denna sida -->
 				Ledsen, det finns inget innehåll på den här sidan.

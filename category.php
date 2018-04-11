@@ -8,11 +8,13 @@ get_header(); // header.php
 			<h1>Kategori-arkiv: <?php single_cat_title(); ?></h1>
 			<?php if (have_posts()) { ?>
 				<!-- nu vet vi att det finns en eller flera poster -->
+				<?php get_template_part('partials/pagination'); ?>
 				<?php while(have_posts()) { the_post(); ?>
 					<?php
 						get_template_part('partials/content', 'excerpt'); // partials/content-excerpt.php
 					?>
 				<?php } ?>
+				<?php get_template_part('partials/pagination'); ?>
 			<?php } else { ?>
 				<!-- nu har vi konstaterat att det INTE finns någon post att hämta på denna sida -->
 				<?php get_template_part('partials/content', 'none'); ?>

@@ -1,6 +1,7 @@
 <?php
 
 require("bs4Navwalker.php");
+require("includes/b4st-pagination.php");
 
 function mbt_register_menus() {
 	// this function registers menus
