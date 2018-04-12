@@ -7,37 +7,3 @@ License: WTFPL
 License URI: http://www.wtfpl.net/
 Text Domain: mybasictheme
 */
-
-body {
-	background-color: #efe;
-}
-
-a {
-	color: #333;
-}
-a:hover {
-	color: #111;
-}
-
-footer {
-	background-color: #333;
-	color: #fff;
-	margin-top: 2rem;
-	padding-top: 1rem;
-	padding-bottom: 1rem;
-}
-
-aside .widget {
-	margin-top: 2rem;
-}
-aside .widget:first-of-type {
-	margin-top: 0;
-}
-
-footer .widget a {
-	color: #ccc;
-}
-
-.clickable {
-	cursor: pointer;
-}

@@ -1,0 +1,38 @@
+@import 'colors';
+@import 'variables';
+
+body {
+	background-color: $site-background-color;
+	color: $site-text-color;
+	font-size: 1rem;
+}
+
+a {
+	color: $site-link-color;
+}
+a:hover {
+	color: lighten($site-link-color, 25%);
+}
+
+footer {
+	background-color: $footer-background-color;
+	color: #fff;
+	margin-top: 2rem;
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+}
+
+aside .widget {
+	margin-top: 2rem;
+}
+aside .widget:first-of-type {
+	margin-top: 0;
+}
+
+footer .widget a {
+	color: #ccc;
+}
+
+.clickable {
+	cursor: pointer;
+}

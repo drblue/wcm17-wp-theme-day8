@@ -13,7 +13,7 @@ add_action('init', 'mbt_register_menus');
 
 function mbt_styles() {
 	wp_enqueue_style('bootstrap4-styles', 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css');
-	wp_enqueue_style('mbt-styles', get_stylesheet_directory_uri() . '/style.css');
+	wp_enqueue_style('mbt-main-styles', get_stylesheet_directory_uri() . '/assets/css/main.css');
 
 	wp_deregister_script('jquery');
 	wp_enqueue_script('jquery', 'https://code.jquery.com/jquery-3.2.1.slim.min.js', [], '3.2.1', true);
